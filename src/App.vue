@@ -25,9 +25,11 @@
     }
   }
 }*/
-  html body {
+  html, body {
     margin:0;
     padding: 0;
+  }
+  html, body, #app, .frame, .frame > section{
     height: 100%;
   }
 </style>

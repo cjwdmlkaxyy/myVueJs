@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="footer">
-      <p>copied crazyming</p>
+      <span>copied crazyming</span><br/>
       <span>2019-9-26</span>
     </div>
   </div>
@@ -45,7 +45,10 @@ export default {
   },
   methods: {
     login() {
-      this.$message.success('登录成功')
+
+      // this.$message.success('登录成功');
+      this.tips('登陆成功', 'success');
+      this.$router.push('/dashboard');
     },
     register() {
       this.$message.warning('敬请期待')
