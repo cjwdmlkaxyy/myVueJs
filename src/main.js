@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import ElementUI from 'element-ui' ;
-import Echarts from 'echarts';
+import echarts from 'echarts';
 import Vuex from 'vuex';
 import 'element-ui/lib/theme-chalk/index.css'
 /******全局样式*****/
@@ -18,7 +18,8 @@ import PublicFun from './components/publicFunc'
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
 Vue.use(PublicFun);
-Vue.use(Echarts);
+// Vue.use(echarts);
+Vue.prototype.$echarts = echarts;
 
 new Vue({
   router,

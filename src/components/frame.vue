@@ -41,8 +41,9 @@
                              active-text-color="#33a0d7"
                              :unique-opened="true"
                              style="border: none;"
+                             :default-active="activeRouterIdx"
                     >
-                        <el-menu-item index="/home">
+                        <el-menu-item index="/dashboard">
                             <i class="fa fa-home"></i>
                             <span>首页</span>
                         </el-menu-item>
@@ -83,6 +84,12 @@
         isCollaps: false,
         nowTime: null
       }
+    },
+    computed: {
+        activeRouterIdx: function() {
+            console.log(this.$route.path)
+            return this.$route.path;
+        }
     },
     methods: {
         targgetNav() {

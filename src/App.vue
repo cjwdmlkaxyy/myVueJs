@@ -32,4 +32,7 @@
   html, body, #app, .frame, .frame > section{
     height: 100%;
   }
+  .el-main {
+    text-align: initial !important;
+  }
 </style>

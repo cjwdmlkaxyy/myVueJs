@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="footer">
-      <span>copied crazyming</span><br/>
+      <span>copyright crazyming</span><br/>
       <span>2019-9-26</span>
     </div>
   </div>
