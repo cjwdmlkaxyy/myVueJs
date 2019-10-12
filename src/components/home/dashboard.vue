@@ -48,6 +48,57 @@
           <div id="chart" style="height: 400px; width: 100%;"></div>
         </el-col>
       </el-row>
+      <el-row class="text-align-center">
+        <h3>控制台</h3>
+      </el-row>
+      <el-row>
+        <h3>待处理事项</h3>
+      </el-row>
+      <el-row>
+        <el-col :span="12" :xs="24">
+          <el-tabs v-model="pendingMatters" @tab-click="handleClick">
+            <el-tab-pane label="未查看得系统通知" name="inform">
+              <span style="font-size: 12px;">数据出现异常，例如：访问量突然增高、出现刷贴等情形时触发检查程序，并在这里展示提示信息！</span>
+              <el-alert class="el-alert" type="success">2019-9-11 10:34 数据库定时自动备份成功！</el-alert>
+              <el-alert class="el-alert" type="warning">2019-8-11 10:34 系统访问量高于平时60%！</el-alert>
+              <el-alert class="el-alert" type="error">2019-8-16 21:34 检查到非法登陆后台管理系统！</el-alert>
+            </el-tab-pane>
+            <el-tab-pane label="待处理的举报" name="report" stripe>
+              <el-table style="width: 100%" :data="tableData">
+                <el-table-column prop="date" label="日期" width="190"></el-table-column>
+                <el-table-column prop="name" label="姓名" width="185"></el-table-column>
+                <el-table-column prop="address" label="内容" width="200"></el-table-column>
+              </el-table>
+            </el-tab-pane>
+            <el-tab-pane label="未查看的留言" name="message">
+              <span style="font-size: 12px;">暂无未查看留言</span>
+            </el-tab-pane>
+          </el-tabs>
+        </el-col>
+        <el-col class="pending-right" :span="12" :xs="24">
+          <div class="pending-right-wrapper">
+            <p>
+              <span>是否开启前天访问: 关闭</span>
+              <el-switch class="switch" v-model="switchObj.frontEndVisit" active-color="#33a0d7" inactive-color="#005da0"></el-switch>
+              <span class="open">开启</span>
+            </p>
+            <p>
+              <span>是否开启用户注册: 关闭</span>
+              <el-switch class="switch" v-model="switchObj.register" active-color="#33a0d7" inactive-color="#005da0"></el-switch>
+              <span class="open">开启</span>
+            </p>
+            <p>
+              <span>是否允许游客访问: 关闭</span>
+              <el-switch class="switch" v-model="switchObj.isAllowVisit" active-color="#33a0d7" inactive-color="#005da0"></el-switch>
+              <span class="open">开启</span>
+            </p>
+            <div>
+              <el-button type="primary" size="mini">执行</el-button>
+              <el-button type="warning" size="mini">取消</el-button>
+            </div>
+          </div>
+        </el-col>
+      </el-row>
     </div>
 </template>
 
@@ -103,7 +154,13 @@
         t1: true,
         t2: false,
         t3: true,
-        t4: ''
+        t4: '',
+        pendingMatters: 'inform',
+        switchObj: {
+          frontEndVisit: true,
+          register: true,
+          isAllowVisit: true
+        }
       }
     },
     methods: {
@@ -259,6 +316,9 @@
             }
           }]
         })
+      },
+      handleClick(tab, e) {
+        console.log(tab, e);
       }
     },
     mounted() {
@@ -330,4 +390,26 @@
     .box-item4:hover {
       background-color: #5c908f;
     }
+  .el-alert {
+    margin: 15px 0;
+  }
+  .pending-right {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+
+    .pending-right-wrapper {
+      width: 300px;
+      text-align: left;
+    }
+    span {
+      font-size: 13px;
+    }
+    .open {
+      color: $baseColor3
+    }
+    .switch {
+      margin: 0 10px;
+    }
+  }
 </style>

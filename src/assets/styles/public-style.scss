@@ -1,4 +1,4 @@
-
+@import "base";
 /****flex布局*****/
 .flex {
   display: flex;
@@ -26,4 +26,21 @@
 }
 .text-align-center {
   text-align: center;
+}
+
+/******表格样式**********/
+.el-table {
+  tr {
+    background-color: transparent !important;
+  }
+  th {
+    background-color: transparent !important;
+    color: white;
+  }
+}
+
+.el-table__header-wrapper {
+  background: $baseColor3;
+  background-image: linear-gradient(120deg, $baseColor3 10%, $baseColor-cyan 80%);
+  background-size: 100% 100%;
 }

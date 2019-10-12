@@ -42,6 +42,7 @@
                              :unique-opened="true"
                              style="border: none;"
                              :default-active="activeRouterIdx"
+                             :router="true"
                     >
                         <el-menu-item index="/dashboard">
                             <i class="fa fa-home"></i>
@@ -52,11 +53,11 @@
                                 <i class="fa fa-newspaper-o"></i>
                                 <span>新闻资讯</span>
                             </template>
-                            <el-menu-item index="/releaseNews">新闻发布</el-menu-item>
-                            <el-menu-item index="/newsMa">新闻管理</el-menu-item>
-                            <el-menu-item index="/releaseNews">新闻分类</el-menu-item>
-                            <el-menu-item index="/releaseNews">评论管理</el-menu-item>
-                            <el-menu-item index="/releaseNews">轮播图管理</el-menu-item>
+                            <el-menu-item index="/newsPublish">新闻发布</el-menu-item>
+                            <el-menu-item index="/newsMgt">新闻管理</el-menu-item>
+                            <el-menu-item index="/newsClass">新闻分类</el-menu-item>
+                            <el-menu-item index="/commentsMgt">评论管理</el-menu-item>
+                            <el-menu-item index="/slideshow">轮播图管理</el-menu-item>
                         </el-submenu>
                         <el-submenu index="4">
                             <template slot="title">
