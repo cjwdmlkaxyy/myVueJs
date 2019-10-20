@@ -6,6 +6,8 @@ import ElementUI from 'element-ui' ;
 import echarts from 'echarts';
 import Vuex from 'vuex';
 import 'element-ui/lib/theme-chalk/index.css'
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 /******全局样式*****/
 import './assets/styles/public-style.scss'
 /******引入fa fa-icon******/
@@ -18,6 +20,7 @@ import PublicFun from './components/publicFunc'
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
 Vue.use(PublicFun);
+Vue.use(mavonEditor);
 // Vue.use(echarts);
 Vue.prototype.$echarts = echarts;
 
