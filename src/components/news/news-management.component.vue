@@ -14,6 +14,19 @@
       <el-row class="fun-bnt">
         <Toolbar></Toolbar>
       </el-row>
+      <el-row style="padding-top: 20px;">
+        <el-table class="table" :data="tableData" style="width: 100%;">
+          <el-table-column fixed="left" label="#" width="50"></el-table-column>
+          <el-table-column label="标题" width="490"></el-table-column>
+          <el-table-column label="作者" width="120"></el-table-column>
+          <el-table-column label="分类" width="120"></el-table-column>
+          <el-table-column label="状态" width="120"></el-table-column>
+          <el-table-column label="发布时间" width="120"></el-table-column>
+          <el-table-column label="阅读数" width="120"></el-table-column>
+          <el-table-column label="点赞数" width="120"></el-table-column>
+          <el-table-column label="操作" width="120"></el-table-column>
+        </el-table>
+      </el-row>
     </div>
   </div>
 </template>
@@ -25,10 +38,19 @@ import Toolbar from '../public-component/toolbar.vue';
     name: "news-management",
     components: {
       Toolbar
+    },
+    data() {
+      return {
+        tableData: []
+      }
     }
   };
 </script>
 
 <style scoped>
-
+  .fun-bnt {
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
 </style>

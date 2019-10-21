@@ -40,6 +40,11 @@
     color: white;
   }
 }
+.table.el-table {
+  th {
+    border-right: 1px #fff solid;
+  }
+}
 
 .el-table__header-wrapper {
   background: $baseColor3;
