@@ -16,15 +16,15 @@
       </el-row>
       <el-row style="padding-top: 20px;">
         <el-table class="table" :data="tableData" style="width: 100%;">
-          <el-table-column fixed="left" label="#" width="50"></el-table-column>
-          <el-table-column label="标题" width="490"></el-table-column>
-          <el-table-column label="作者" width="120"></el-table-column>
-          <el-table-column label="分类" width="120"></el-table-column>
-          <el-table-column label="状态" width="120"></el-table-column>
-          <el-table-column label="发布时间" width="120"></el-table-column>
-          <el-table-column label="阅读数" width="120"></el-table-column>
-          <el-table-column label="点赞数" width="120"></el-table-column>
-          <el-table-column label="操作" width="120"></el-table-column>
+          <el-table-column fixed="left" label="#" min-width="50"></el-table-column>
+          <el-table-column label="标题" min-width="500"></el-table-column>
+          <el-table-column label="作者" min-width="120"></el-table-column>
+          <el-table-column label="分类" min-width="120"></el-table-column>
+          <el-table-column label="状态" min-width="120"></el-table-column>
+          <el-table-column label="发布时间" min-width="120"></el-table-column>
+          <el-table-column label="阅读数" min-width="120"></el-table-column>
+          <el-table-column label="点赞数" min-width="120"></el-table-column>
+          <el-table-column fixed="right" label="操作" min-width="120"></el-table-column>
         </el-table>
       </el-row>
     </div>

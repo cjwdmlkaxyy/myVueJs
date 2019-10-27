@@ -65,9 +65,9 @@
             </el-tab-pane>
             <el-tab-pane label="待处理的举报" name="report" stripe>
               <el-table style="width: 100%" :data="tableData">
-                <el-table-column prop="date" label="日期" width="190"></el-table-column>
-                <el-table-column prop="name" label="姓名" width="185"></el-table-column>
-                <el-table-column prop="address" label="内容" width="200"></el-table-column>
+                <el-table-column prop="date" label="日期"></el-table-column>
+                <el-table-column prop="name" label="姓名"></el-table-column>
+                <el-table-column prop="address" label="内容"></el-table-column>
               </el-table>
             </el-tab-pane>
             <el-tab-pane label="未查看的留言" name="message">
