@@ -17,7 +17,6 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "Login",
       component: Login,
       redirect: "login"
     },
@@ -30,8 +29,9 @@ export default new Router({
       path: '/',
       name: 'Frame',
       component: Frame,
+      redirect: 'Dashboard',
       children: [
-        {path: '/', redirect: 'Dashboard'},
+        // {path: '/', redirect: 'Dashboard'},
         {
           path: '/dashboard',
           name: 'Dashboard',

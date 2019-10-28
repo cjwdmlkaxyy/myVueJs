@@ -1,0 +1,25 @@
+@charset "UTF-8";
+//@import "mixin";
+@import "./base";
+
+@mixin el-table-header($fromColor, $endColor) {
+  background-image: linear-gradient(120deg, $fromColor 10%, $endColor 80%);
+  background-size: 100% 100%;
+}
+[data-theme-style] {
+  transition: all 300ms;
+}
+
+[data-theme-style='dark'] {
+  //background-color: orange;
+  .el-table__header-wrapper {
+    @include el-table-header($basePink, $baseYellow)
+  }
+
+}
+
+[data-theme-style='light'] {
+  .el-table__header-wrapper {
+    @include el-table-header($baseColor3, $baseColor-cyan)
+  }
+}

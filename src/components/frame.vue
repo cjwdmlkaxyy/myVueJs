@@ -12,7 +12,16 @@
                     </el-tooltip>
                 </div>
                 <div class="header-right">
-                    <span class="color-white">{{nowTime}}</span>
+                    <div class="switch-theme">
+                        <i class="fa fa-moon-o"></i>
+                        <el-switch v-model="switchTheme"
+                                   active-value="light"
+                                   inactive-value="dark"
+                                   @change="saveTheme"
+                        ></el-switch>
+                        <i class="fa fa-sun-o"></i>
+                    </div>
+                    <span class="color-white" style="width: 160px;">{{nowTime}}</span>
                     <div class="header-picture">
                         <img src="../assets/head-portrait.jpg">
                     </div>
@@ -83,7 +92,8 @@
     data() {
       return {
         isCollaps: false,
-        nowTime: null
+        nowTime: null,
+        switchTheme: localStorage.getItem('Frame_Theme') ? localStorage.getItem('Frame_Theme') : 'light'
       }
     },
     computed: {
@@ -93,22 +103,42 @@
         }
     },
     methods: {
-        targgetNav() {
-          if (this.isCollaps) {
-            this.isCollaps = false;
-          } else {
-            this.isCollaps = true;
-          }
-        },
-        logout() {
-          this.tips('注销成功', 'success');
-          this.$router.push('/login');
+      targgetNav() {
+        if (this.isCollaps) {
+          this.isCollaps = false;
+        } else {
+          this.isCollaps = true;
         }
+      },
+      logout() {
+        this.tips('注销成功', 'success');
+        this.$router.push('/login');
+      },
+      saveTheme(e) {
+        localStorage.setItem('Frame_Theme', e);
+        this.changeTheme();
+      },
+      changeTheme() {
+        const theme = this.switchTheme;
+        const body = document.getElementsByTagName('body')[0];
+        body.setAttribute('data-theme-style', theme); // 设置data-theme-style 属性
+      }
     },
-    created() {
-        setInterval(() => {
-          this.nowTime = this.showTime();
-        }, 1000);
+    created() { // 页面加载完之前执行
+
+    },
+    mounted() { // 页面加载完之后执行
+      setInterval(() => {
+        this.nowTime = this.showTime();
+      }, 1000);
+      // 设置默认的主题颜色
+      this.changeTheme();
+    },
+    watch: {
+      switchTheme(newValue, oldValue) {
+        console.log(newValue);
+        console.log(oldValue);
+      }
     }
   };
 </script>
@@ -198,5 +228,23 @@
     .el-menu-vertical-demo:not(.el-menu--collapse) {
         width: 200px;
         min-height: 400px;
+    }
+    .switch-theme {
+        padding-right: 20px;
+        display: flex;
+        justify-content: center;
+
+        i {
+            font-size: 26px;
+        }
+        i.fa-moon-o {
+            color: #005da0;
+        }
+        i.fa-sun-o {
+            color: #d8d821;
+        }
+        .el-switch {
+            margin: auto 8px;
+        }
     }
 </style>

@@ -45,12 +45,6 @@
     border-right: 1px #fff solid;
   }
 }
-
-.el-table__header-wrapper {
-  background: $baseColor3;
-  background-image: linear-gradient(120deg, $baseColor3 10%, $baseColor-cyan 80%);
-  background-size: 100% 100%;
-}
 /*******每页标题*********/
 .pageTile {
   border-bottom: 1px #dcdfe6 solid;
@@ -70,4 +64,14 @@
   background-color: #fff;
   padding: 10px 10px;
   margin-top: 20px;
+}
+/*********switch theme*************/
+.switch-theme {
+  .el-switch.is-checked .el-switch__core,
+  .el-switch__core {
+    background: transparent;
+  }
+  .el-switch.is-checked .el-switch__core {
+    border-color: #DCDFE6;
+  }
 }

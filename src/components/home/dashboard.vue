@@ -166,53 +166,53 @@
     methods: {
       displayChart(i) {
         switch(i) {
-          case 1: 
-          this.chartColor = '#005da0';
-          this.unit = '人次';
-          this.chartType = "line";
-          this.arrayData=[
-                {timeRange: "00:00-00:59", value: 80},
-                {timeRange: "01:00-01:59", value: 20},
-                {timeRange: "02:00-02:59", value: 10},
-                {timeRange: "03:00-03:59", value: 10},
-                {timeRange: "04:00-04:59", value: 5},
-                {timeRange: "05:00-05:59", value: 3},
-                {timeRange: "06:00-06:59", value: 1},
-                {timeRange: "07:00-07:59", value: 6},
-                {timeRange: "08:00-08:59", value: 30},
-                {timeRange: "09:00-09:59", value: 32},
-                {timeRange: "10:00-10:59", value: 45},
-                {timeRange: "11:00-11:59", value: 47},
-                {timeRange: "12:00-12:59", value: 60},
-                {timeRange: "13:00-13:59", value: 120},
-                {timeRange: "14:00-14:59", value: 123},
-                {timeRange: "15:00-15:59", value: 189},
-                {timeRange: "16:00-16:59", value: 60},
-                {timeRange: "17:00-17:59", value: 100},
-                {timeRange: "18:00-18:59", value: 80},
-                {timeRange: "19:00-19:59", value: 70},
-                {timeRange: "20:00-20:59", value: 111},
-                {timeRange: "21:00-21:59", value: 90},
-                {timeRange: "22:00-22:59", value: 100},
-                {timeRange: "23:00-23:59", value: 69}
-          ];
-          this.chartTitle = '今日实时访问量图表分析';
-          break;
-        case 2: 
-          this.chartColor="#4270ae";
-            this.unit="人次";
-            this.chartType="line"
+          case 1:
+            this.chartColor = '#005da0';
+            this.unit = '人次';
+            this.chartType = "line";
             this.arrayData=[
-              {timeRange: "2018-9-1", value: 453},
-              {timeRange: "2018-9-2", value: 234},
-              {timeRange: "2018-9-3", value: 335},
-              {timeRange: "2018-9-4", value: 310},
-              {timeRange: "2018-9-5", value: 80},
-              {timeRange: "2018-9-6", value: 652},
-              {timeRange: "2018-9-7", value: 333},
-            ]
-            this.chartTitle="本月访问量图表分析";
+                  {timeRange: "00:00-00:59", value: 80},
+                  {timeRange: "01:00-01:59", value: 20},
+                  {timeRange: "02:00-02:59", value: 10},
+                  {timeRange: "03:00-03:59", value: 10},
+                  {timeRange: "04:00-04:59", value: 5},
+                  {timeRange: "05:00-05:59", value: 3},
+                  {timeRange: "06:00-06:59", value: 1},
+                  {timeRange: "07:00-07:59", value: 6},
+                  {timeRange: "08:00-08:59", value: 30},
+                  {timeRange: "09:00-09:59", value: 32},
+                  {timeRange: "10:00-10:59", value: 45},
+                  {timeRange: "11:00-11:59", value: 47},
+                  {timeRange: "12:00-12:59", value: 60},
+                  {timeRange: "13:00-13:59", value: 120},
+                  {timeRange: "14:00-14:59", value: 123},
+                  {timeRange: "15:00-15:59", value: 189},
+                  {timeRange: "16:00-16:59", value: 60},
+                  {timeRange: "17:00-17:59", value: 100},
+                  {timeRange: "18:00-18:59", value: 80},
+                  {timeRange: "19:00-19:59", value: 70},
+                  {timeRange: "20:00-20:59", value: 111},
+                  {timeRange: "21:00-21:59", value: 90},
+                  {timeRange: "22:00-22:59", value: 100},
+                  {timeRange: "23:00-23:59", value: 69}
+            ];
+            this.chartTitle = '今日实时访问量图表分析';
             break;
+          case 2:
+            this.chartColor="#4270ae";
+              this.unit="人次";
+              this.chartType="line"
+              this.arrayData=[
+                {timeRange: "2018-9-1", value: 453},
+                {timeRange: "2018-9-2", value: 234},
+                {timeRange: "2018-9-3", value: 335},
+                {timeRange: "2018-9-4", value: 310},
+                {timeRange: "2018-9-5", value: 80},
+                {timeRange: "2018-9-6", value: 652},
+                {timeRange: "2018-9-7", value: 333},
+              ]
+              this.chartTitle="本月访问量图表分析";
+              break;
           case 3:
             this.chartColor="#21a3b0";
             this.unit="人";
@@ -229,7 +229,7 @@
             ]
             this.chartTitle="过去七日活跃用户数据分析";
             break;
-          case 4: 
+          case 4:
             this.chartColor="#7bbdbc";
             this.unit="人";
             this.chartType="bar";
@@ -246,7 +246,7 @@
               {timeRange: "2018-10", value: 456},
             ]
             this.chartTitle="本年度各月份活跃用户数据分析";
-            break;    
+            break;
         }
         this.drawChart();
       },
@@ -282,7 +282,7 @@
           },
           legend: {
             data: [''+this.unit+''],
-            x: 'right', 
+            x: 'right',
             y: 'top'
           },
           xAxis: {

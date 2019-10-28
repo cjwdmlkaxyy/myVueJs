@@ -39,16 +39,20 @@ export default {
       labelPosition: "top",
       formLabelAlign: {
         username: "test",
-        password: "admin"
+        password: ""
       }
     };
   },
   methods: {
     login() {
-
+      if (this.formLabelAlign.username === '' || this.formLabelAlign.password === '') {
+        this.tips('请输入用户名或密码', 'error');
+        return;
+      }
       // this.$message.success('登录成功');
       this.tips('登陆成功', 'success');
       this.$router.push('/dashboard');
+      sessionStorage.setItem('Login_UserInfos', JSON.stringify(this.formLabelAlign));
     },
     register() {
       this.$message.warning('敬请期待')
