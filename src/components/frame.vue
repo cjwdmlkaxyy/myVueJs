@@ -112,6 +112,7 @@
       },
       logout() {
         this.tips('注销成功', 'success');
+        sessionStorage.removeItem('Login_UserInfos');
         this.$router.push('/login');
       },
       saveTheme(e) {

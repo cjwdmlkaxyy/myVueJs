@@ -27,31 +27,18 @@ Vue.use(mavonEditor);
 Vue.prototype.$echarts = echarts;
 
 // 添加路由守卫
-// router.beforeEach((to, from, next) => {
-//   console.log(to);
-//   /*if (to.matched.some(record => record.meta.auth)) {
-//     if (getToken() !== null) {
-//       next();
-//     } else {
-//       if (to.name === 'login') {
-//         next();
-//         return
-//       }
-//       next({path: '/login'})
-//     }
-//   } else {
-//     next();
-//   }*/
-//   /*if (to.name !== 'Login') {
-//     const useInfos = JSON.parse(sessionStorage.getItem('Login_UserInfos')) ? true : false;
-//     if (useInfos) {
-//       next();
-//     } else {
-//       // 不能跳转到登陆页面
-//       // next();
-//     }
-//   }*/
-// });
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'Login') {
+    const useInfos = JSON.parse(sessionStorage.getItem('Login_UserInfos')) ? true : false;
+    if (useInfos) {
+      next();
+    } else {
+      next('/login');
+    }
+  } else {
+    next();
+  }
+});
 
 new Vue({
   router,

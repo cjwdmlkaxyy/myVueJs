@@ -14,6 +14,7 @@
           <el-input
             type="password"
             v-model="formLabelAlign.password"
+            @keyup.enter.native="login()"
           ></el-input>
         </el-form-item>
         <el-form-item label="">
@@ -44,15 +45,17 @@ export default {
     };
   },
   methods: {
-    login() {
+    login(e) {
       if (this.formLabelAlign.username === '' || this.formLabelAlign.password === '') {
         this.tips('请输入用户名或密码', 'error');
         return;
       }
       // this.$message.success('登录成功');
       this.tips('登陆成功', 'success');
-      this.$router.push('/dashboard');
       sessionStorage.setItem('Login_UserInfos', JSON.stringify(this.formLabelAlign));
+      this.$router.push('/dashboard').catch(err => {
+        console.log(err);
+      });
     },
     register() {
       this.$message.warning('敬请期待')
