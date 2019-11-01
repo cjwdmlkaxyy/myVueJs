@@ -12,7 +12,7 @@
         <span>校园新闻资讯的管理</span>
       </el-row>
       <el-row class="fun-bnt">
-        <Toolbar></Toolbar>
+        <Toolbar :chart-btn="false" @searchFun="searchFunc($event)"></Toolbar>
       </el-row>
       <el-row style="padding-top: 20px;">
         <el-table class="table" :data="tableData" style="width: 100%;">
@@ -42,6 +42,11 @@ import Toolbar from '../public-component/toolbar.vue';
     data() {
       return {
         tableData: []
+      }
+    },
+    methods: {
+      searchFunc(e) {
+        console.log("received search click message", e);
       }
     }
   };
